@@ -8,12 +8,18 @@ function setup() {
   colorMode(HSB, 360, 100, 100);
   brushHue = 0;
   backgroundColor = 95;
+  
+  //setting the coin coordinates to random positions on the canvas
   coinX = random(width);
   coinY = random(height);
+  
+  //setting timer to 1000
   time = 1000;
   gameIsOver = false;
   score = 0;
   colorMode(HSB, 360, 100, 100);
+  
+  //seeting the color of the coin and mouse
   coinColor = 20;
   mouseColor = 20;
   radius = 20;
@@ -58,6 +64,7 @@ function handleCollision() {
   }
 }
 
+//keeps track of the time and when the timer should say times up!
 function handleTime() {
   if (time > 0) {
     time -= 1;
@@ -74,12 +81,14 @@ function handleTime() {
   // We'll write code to handle the time.
 }
 
+//press R to restart
 function keyTyped() {
   if (key === 'R' || key === 'r') {
     setup();
   }
 }
 
+//function to animate the coin to make it look like its turning
 function rotation(){
   if (randomm%5 == 0){
     radiusX = 20;
